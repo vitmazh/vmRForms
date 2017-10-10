@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import * as usersAction from '../actions/index';
-import FormLogin from "./Forms/FormLogin";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import Form from "./Form";
 
-class Login extends Component {
+class LoginForm extends Component {
   loginHandle(values) {
-    this.props.usersAction.loginUser(values);
+    // this.props.usersAction.loginUser(values);
     console.log(values)
   }
 
@@ -27,7 +26,7 @@ class Login extends Component {
         <div className='login-c_divider'>
           OR
         </div>
-        <FormLogin
+        <Form
           onSubmit={(e)=>this.loginHandle(e)}
         />
         <a href="#"> Forgot password?</a>
@@ -39,11 +38,8 @@ class Login extends Component {
     )
   }
 }
-
 const mapStateToProps = (state) => ({});
-
 const mapDispatchToProps = (dispatch) => ({
-  usersAction: bindActionCreators(usersAction, dispatch)
+  // usersAction: bindActionCreators(usersAction, dispatch)
 });
-
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(LoginForm);

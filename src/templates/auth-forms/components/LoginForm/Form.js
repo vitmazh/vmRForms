@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form'
 
-class FormLogin extends Component {
+class Form extends Component {
   constructor() {
     super();
 
@@ -48,9 +48,9 @@ class FormLogin extends Component {
 //   form: 'login'
 // })(FormLogin);
 
-FormLogin = reduxForm({
+Form = reduxForm({
   // a unique name for the form
   form: 'login'
-})(FormLogin)
+})(Form)
 
-export default FormLogin;
+export default Form;
